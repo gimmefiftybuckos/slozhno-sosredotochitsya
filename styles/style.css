@@ -3,7 +3,7 @@
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   background-color: var(--main-color);
-  font-family: 'IBM Plex mono', sans-serif;
+  font-family: "IBM Plex mono", sans-serif;
   font-size: var(--main-font);
   background-image: url(../images/cover-image-dark.png);
   background-position-x: center;
@@ -24,7 +24,7 @@
 }
 
 .decorated-zone::before {
-  content: '';
+  content: "";
   display: block;
   height: 25px;
   width: 25px;
@@ -35,7 +35,7 @@
 }
 
 .decorated-zone::after {
-  content: '';
+  content: "";
   display: block;
   height: 25px;
   width: 25px;
@@ -62,10 +62,10 @@
 }
 
 .decoration::after {
-  content: '';
+  content: "";
   display: inline-block;
-  position: relative; 
-  inset-inline-start: 11px; 
+  position: relative;
+  inset-inline-start: 11px;
   width: 9px;
   height: 9px;
   box-shadow: 0 0 5px var(--acent-color);
@@ -83,7 +83,6 @@
   border: 0;
   text-transform: lowercase;
   color: var(--menu-button-color);
-
 }
 
 .title {
@@ -147,6 +146,10 @@
   max-width: 260px;
 }
 
+.theme-title-decoration {
+  background-color: var(--acent-color);
+}
+
 .theme-title-addition {
   font-size: inherit;
   background-color: var(--acent-color);
@@ -168,6 +171,7 @@
 }
 
 .article__link {
+  text-decoration: none;
   text-shadow: 3px 3px var(--acent-color);
 }
 
@@ -203,7 +207,6 @@
 }
 
 @media (min-width: 768px) {
-  
   .header {
     padding: 20px;
     /* height: calc(80vw + 410px); */
@@ -248,7 +251,7 @@
     inset-block-start: 20px;
     inset-inline-end: 40px;
   }
-  
+
   .main {
     margin-block-start: 40.2px;
     padding: 20px;
@@ -320,11 +323,10 @@
 }
 
 @media (min-width: 1024px) {
-
   .theme-title_width {
     max-width: 260px;
   }
-  
+
   .article-container_grid-column {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

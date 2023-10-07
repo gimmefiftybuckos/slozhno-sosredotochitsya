@@ -4,13 +4,13 @@
 */
 :root {
   --main-color: #000028;
-  --acent-color: #FF0070;
-  --title-color: #DB00FF;
-  --title-shadow-color: #FF0070; 
+  --acent-color: #ff0070;
+  --title-color: #db00ff;
+  --title-shadow-color: #ff0070;
   --theme-title-color: #000028;
-  --theme-title-contrast-color: #FF0070;
-  --menu-button-color: #FF0070;
-  --decoration-color: #FF0070;
-  --p-color: #F1B2CE;
-  --main-font: 18px
+  --theme-title-contrast-color: #ff0070;
+  --menu-button-color: #ff0070;
+  --decoration-color: #ff0070;
+  --p-color: #f1b2ce;
+  --main-font: 18px;
 }
