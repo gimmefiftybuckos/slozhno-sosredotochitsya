@@ -176,12 +176,12 @@
 }
 
 .content-image {
-  gap: 11px;
+  gap: 10px;
 }
 
 .content-image__container {
   display: grid;
-  gap: 5px;
+  gap: 4px;
 }
 
 .image-container {
@@ -277,7 +277,7 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 20px;
-    grid-row-gap: 15px;
+    grid-row-gap: 14px;
   }
 
   .image-container {
