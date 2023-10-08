@@ -83,6 +83,16 @@
   border: 0;
   text-transform: lowercase;
   color: var(--menu-button-color);
+  
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid currentColor;
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: 0;
+  border-bottom: 1px solid currentColor;
 }
 
 .title {
@@ -172,7 +182,16 @@
 
 .article__link {
   text-decoration: none;
-  text-shadow: 3px 3px var(--acent-color);
+  text-shadow: 2px 2px var(--acent-color);
+}
+
+.article__link:hover {
+  border-bottom: 2px solid currentColor;
+}
+
+.article__link:focus {
+  outline: 1px solid currentColor;
+  outline-offset: 1px;
 }
 
 .content-image {
