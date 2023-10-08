@@ -1,11 +1,7 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   background-color: var(--main-color);
   font-family: "IBM Plex mono", sans-serif;
   font-size: var(--main-font);
-  background-image: url(../images/cover-image-dark.png);
   background-position-x: center;
   background-position-y: top;
   background-repeat: no-repeat;
@@ -13,9 +9,45 @@
   background-size: cover;
 }
 
+@media (prefers-color-scheme: dark) {
+  .page.theme_auto {
+    background-image: url(../images/cover-image-dark.png);
+    --main-color: #000028;
+    --acent-color: #ff0070;
+    --title-color: #db00ff;
+    --title-shadow-color: #ff0070;
+    --theme-title-color: #000028;
+    --theme-title-contrast-color: #ff0070;
+    --menu-button-color: #ff0070;
+    --decoration-color: #ff0070;
+    --p-color: #f1b2ce;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .page.theme_auto {
+    background-image: url(../images/cover-image-light.png);
+    --main-color: #fff1f7;
+    --acent-color: #ff8dcb;
+    --title-color: #ffc2e6;
+    --title-shadow-color: #ff0070;
+    --theme-title-color: #353430;
+    --theme-title-contrast-color: #353430;
+    --menu-button-color: #353430;
+    --decoration-color: #353430;
+    --p-color: #353430;
+  }
+
+  .page.theme_auto .decoration {
+    z-index: -1;
+  }
+}
+
 .header {
   position: relative;
   padding: 10px;
+  min-block-size: 668px;
+  block-size: 100vh;
 }
 
 .header__theme-menu-button_active {
@@ -26,7 +58,7 @@
 .decorated-zone::before {
   content: "";
   display: block;
-  height: 25px;
+  block-size: 25px;
   width: 25px;
   position: absolute;
   inset-inline-end: 11px;
@@ -37,7 +69,7 @@
 .decorated-zone::after {
   content: "";
   display: block;
-  height: 25px;
+  block-size: 25px;
   width: 25px;
   position: absolute;
   inset-inline-start: 11px;
@@ -67,7 +99,7 @@
   position: relative;
   inset-inline-start: 11px;
   width: 9px;
-  height: 9px;
+  block-size: 9px;
   box-shadow: 0 0 5px var(--acent-color);
   border-radius: 50%;
   background-color: var(--acent-color);
@@ -83,15 +115,17 @@
   border: 0;
   text-transform: lowercase;
   color: var(--menu-button-color);
-  
 }
 
 .header__theme-menu-button:hover {
   outline: 1px solid currentColor;
 }
 
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
 .header__theme-menu-button:focus-visible {
-  outline: 0;
   border-bottom: 1px solid currentColor;
 }
 
@@ -102,18 +136,17 @@
 }
 
 .header-title {
-  margin-block-start: 19%;
+  margin-block-start: clamp(67px, 18vw, 90px);
   text-shadow: 4px 4px var(--title-shadow-color);
 }
 
 .header__description-container {
-  margin-block-start: 15%;
-  margin-block-end: 15.8%;
+  margin-block-start: 54px;
 }
 
 .header__description {
   padding-block-start: 2px;
-  max-width: 355px;
+  max-inline-size: 355px;
   background-color: var(--acent-color);
   color: var(--theme-title-color);
   font-weight: 700;
@@ -152,8 +185,8 @@
   color: var(--theme-title-contrast-color);
 }
 
-.theme-title_width {
-  max-width: 260px;
+.theme-title_inline-size {
+  max-inline-size: 260px;
 }
 
 .theme-title-decoration {
@@ -190,6 +223,10 @@
 }
 
 .article__link:focus {
+  outline: none;
+}
+
+.article__link:focus-visible {
   outline: 1px solid currentColor;
   outline-offset: 1px;
 }
@@ -204,31 +241,32 @@
 }
 
 .image-container {
-  width: calc(100vw - 20px);
+  inline-size: calc(100vw - 20px);
 }
 
 .image {
-  width: 100%;
+  inline-size: 100%;
   object-fit: contain;
 }
 
 .footer {
-  margin-block-start: 6.7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  block-size: 100vh;
+  max-block-size: 1000px;
+  margin-block-start: 7.5%;
   position: relative;
   padding: 10px;
 }
 
 .footer-title {
-  text-align: center;
-  margin-block-start: 78%;
   text-shadow: 2px 2px var(--title-shadow-color);
-  margin-block-end: 77.4%;
 }
 
 @media (min-width: 768px) {
   .header {
     padding: 20px;
-    /* height: calc(80vw + 410px); */
   }
 
   .decorated-zone::before {
@@ -250,20 +288,19 @@
   }
 
   .header-title {
-    margin-block-start: 24.5%;
+    margin-block-start: 17.3vh;
     position: relative;
     inset-inline-start: -20px;
   }
 
   .header__description-container {
-    margin-block-start: 22%;
-    margin-block-end: 22.4%;
+    margin-block-start: 15.8vh;
     display: flex;
     justify-content: end;
   }
 
   .header__description {
-    max-width: 364px;
+    max-inline-size: 364px;
   }
 
   .decoration {
@@ -277,8 +314,8 @@
     gap: 79.7px;
   }
 
-  .theme-title_width {
-    max-width: 230px;
+  .theme-title_inline-size {
+    max-inline-size: 230px;
   }
 
   .content_grid-gap {
@@ -287,12 +324,12 @@
   }
 
   .content-image {
-    max-height: 107.4vw;
+    max-block-size: 107.4vw;
     gap: 19px;
   }
 
   .content-image__container {
-    height: 78.1%;
+    block-size: 78.1%;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-column-gap: 20px;
@@ -300,7 +337,7 @@
   }
 
   .image-container {
-    width: 100%;
+    inline-size: 100%;
   }
 
   .image-container-sunset {
@@ -327,23 +364,18 @@
 
   .image {
     object-fit: cover;
-    height: 99%;
+    block-size: 99%;
   }
 
   .footer {
     margin-block-start: 5%;
     padding: 20px;
   }
-
-  .footer-title {
-    margin-block-start: 61%;
-    margin-block-end: 61%;
-  }
 }
 
 @media (min-width: 1024px) {
-  .theme-title_width {
-    max-width: 260px;
+  .theme-title_inline-size {
+    max-inline-size: 260px;
   }
 
   .article-container_grid-column {
@@ -367,12 +399,11 @@
 
   .header__description-container {
     margin-block-start: 0;
-    margin-block-end: 11.7%;
   }
 
   .header__description {
     margin-block-start: 13.3%;
-    max-width: 491px;
+    max-inline-size: 491px;
     padding: 0;
   }
 
@@ -381,7 +412,7 @@
   }
 
   .content-image {
-    max-height: 106.5vw;
+    max-block-size: clamp(1090px, 106.5vw, 1535px);
   }
 
   .footer {
@@ -389,7 +420,6 @@
   }
 
   .footer-title {
-    margin-block-start: 32.1%;
-    margin-block-end: 32.1%;
+    margin-block: 0;
   }
 }
