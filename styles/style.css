@@ -344,11 +344,13 @@
 
   .image-container {
     inline-size: 100%;
+    block-size: 99%;
   }
 
   .image-container:first-child {
     grid-column-start: 1;
     grid-column-end: span 2;
+    block-size: 97.5%;
   }
 
   .image-container:nth-child(2) {
@@ -363,31 +365,20 @@
     grid-row-end: span 2;
   }
 
+  .image-container:nth-child(4) {
+    block-size: 98.5%;
+  } 
+
   .image-container:last-child {
     grid-column-start: 2;
     grid-column-end: span 2;
+    margin-block-start: 1px;
+    block-size: 97.7%;
   }
 
   .image {
     object-fit: cover;
     block-size: 100%;
-  }
-
-  .image-container {
-    block-size: 99%;
-  }
-
-  .image-container:first-child {
-    block-size: 97.5%;
-  }
-
-  .image-container:nth-child(4) {
-    block-size: 98.5%;
-  }
-
-  .image-container:last-child {
-    margin-block-start: 1px;
-    block-size: 97.7%;
   }
 
   .footer {
