@@ -7,6 +7,23 @@
   --theme-title-color: #000028;
   --theme-title-contrast-color: #ff0070;
   --menu-button-color: #ff0070;
+  --menu-button-color-hover: #ff0070;
   --decoration-color: #ff0070;
   --p-color: #f1b2ce;
+}
+
+@media (prefers-color-scheme: dark) {
+  .page {
+    background-image: url(../images/cover-image-dark.png);
+    --main-color: #000028;
+    --acent-color: #ff0070;
+    --title-color: #db00ff;
+    --title-shadow-color: #ff0070;
+    --theme-title-color: #000028;
+    --theme-title-contrast-color: #ff0070;
+    --menu-button-color: #ff0070;
+    --menu-button-color-hover: #ff0070;
+    --decoration-color: #ff0070;
+    --p-color: #f1b2ce;
+  }
 }
